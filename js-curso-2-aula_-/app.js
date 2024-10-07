@@ -1,5 +1,5 @@
 let listaDeNumerosSorteados = [];
-let numeroMaximo = 3;
+let numeroMaximo = 100;
 let numeroSecreto = numeroAleatorio();
 let tentativa = 1;
 
@@ -18,17 +18,17 @@ function reiniciarJogo(){
 }
 function mensagemInicial(){
     exibirTexto('h1','Jogo do numero secreto');
-    exibirTexto('p','Escolha um numero de 0 a 10');
+    exibirTexto('p','Escolha um numero de 0 a 100');
 }
 
 function verificarChute(){
     let chute = document.querySelector('input').value;
     let palavraTentativa = tentativa > 1 ? 'tentativas':'tentativa';
-    let mensagemTentativa = (`Voce acertou o nuemro secreto! com ${tentativa} ${palavraTentativa}`)
+    let mensagemTentativa = (`Voce acertou o nuemro secreto! com ${tentativa} ${palavraTentativa}`);
     if (chute == numeroSecreto){
         exibirTexto('h1',mensagemTentativa);
         exibirTexto('p','Parabens');
-        document.getElementById("reiniciar").removeAttribute('disabled')
+        document.getElementById("reiniciar").removeAttribute('disabled');
     }else {
         if (chute > numeroSecreto){
             exibirTexto('h1','O numero secreto e menor');
